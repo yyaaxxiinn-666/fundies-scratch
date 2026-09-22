@@ -61,3 +61,5 @@ flag2 = beside(flag1, rectangle(100, 50, "solid", "white"))
 
 flag3 = above(flag2, rectangle(200, 50, "solid", "red"))
 flag3
+
+"testing for this lab"
