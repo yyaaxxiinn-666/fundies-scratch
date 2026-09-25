@@ -23,15 +23,15 @@ perimeter * 0.1
 
 #Q3 Make a Traffic Light
 #All objects
-body1 = rectangle(200, 120, "solid", "black")
+body1 = rectangle(200, 120, "solid", "white")
 red_l = circle(60, "solid", "red")
 light1 = overlay(red_l, body1)
 
-body2 = rectangle(200, 120, "solid", "black")
+body2 = rectangle(200, 120, "solid", "white")
 yellow_l = circle(60, "solid", "yellow")
 light2 = overlay(yellow_l, body2)
 
-body3 = rectangle(200, 120, "solid", "black")
+body3 = rectangle(200, 120, "solid", "white")
 green_l = circle(60, "solid", "green")
 light3 = overlay(green_l, body3)
 
@@ -60,6 +60,11 @@ flag1 = overlay(body6, body5)
 flag2 = beside(flag1, rectangle(100, 50, "solid", "white"))
 
 flag3 = above(flag2, rectangle(200, 50, "solid", "red"))
-flag3
 
-"testing for this lab"
+place-image(
+  frame(flag3),
+  100, 50,
+  empty-scene(200, 100)
+  )
+
+"Finally all practice Qs done!"
