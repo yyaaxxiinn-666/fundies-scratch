@@ -44,3 +44,13 @@ where:
   compute-sum(9, 9) is 18
   compute-sum(6, 7) is 13
 end
+
+
+photos = load-table:
+  location :: String,
+  subject :: String,
+  date :: String
+  source: csv-table-url("https://raw.githubusercontent.com/NU-London/LCSCI4207-datasets/refs/heads/main/photos.csv", default-options)
+end
+
+filter-with(photos, lam(r): r["subject"] == "Forest" end)
