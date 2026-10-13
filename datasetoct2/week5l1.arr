@@ -53,4 +53,21 @@ get-column(with-year.row-n(0), "BirthYear")
 #fixing the typo
 fun fix-labour(s :: String) -> String:
   doc: "corrects the one known misspelling of Labour"
-  
+  if s == "Labuor" : "Labour" #missplelling of labour party
+  else if s == "" : "No Party" #fill in missing values with "No Party"
+  else: s
+  end
+    
+  #if s == "" : "None" 
+  #else: s end
+ 
+where:
+  fix-labour("Labuor") is "Labour"
+  #fix-labour("") is "None"
+  fix-labour("Green Party") is "Green Party"
+end
+
+#try using transform-solumn
+fixed = transform-column(voter-data, "Party", fix-labour)
+
+freq-bar-chart(fixed, "Party")
