@@ -29,3 +29,78 @@ where:
   is-viral(post-2) is false
   is-viral(post("@JamesBond", "Hello, My name is James Bond", 1000, 50)) is false
 end
+
+
+#conditional data
+
+
+#priority: variants with no fields
+
+data Priority:
+  | low
+  | medium
+  | high
+end
+
+task-1-priority = low
+task-2-priority = medium
+task-3-priority = high
+
+check:
+  is-Priority(task-1-priority) is true
+  is-low(task-1-priority) is true
+  is-medium(task-3-priority) is false
+  is-high(task-3-priority) is true
+end
+
+
+#task: variants with fields
+data Task:
+  | task(description :: String, priority :: Priority)
+  | note(description :: String)
+end
+
+task-1 = task("Buy groceries", high)
+task-2 = task("Pay council tax", high)
+note-1 = note("PDI exam is on Oct 30th")
+
+task-1.priority
+note-1.description
+is-task(task-1) #true
+is-note(task-1) #false
+
+
+#describe
+fun describe(t :: Task) -> String:
+  cases (Task) t:
+    | task(d, p) => "TASK: " + d 
+    | note(d) => "NOTE: " + d
+  end
+end
+
+#the task(d, P) pattern must have one name per field, in order.
+#The note branch has one name because note has one field.
+describe(task-1)
+describe(note-1)
+
+fun is-urgent(t :: Task) -> Boolean:
+  doc: "true for a task with igh priority; notes are never urgent"
+  cases (Task) t:
+    | task(d, p) => is-high(p)
+    | else => false
+  end
+where:
+  is-urgent(task-2) is true
+  is-urgent(task-1) is true
+  is-urgent(note-1) is false
+end
+
+# a variant with no branch
+fun describe-again(t :: Task) -> String:
+  cases (Task) t:
+    | task(d, P) => "TASK: " + d
+  end
+end
+describe-again(task-1)
+#describle-again(note-1)
+
