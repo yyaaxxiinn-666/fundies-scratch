@@ -56,12 +56,24 @@ end
 
 
 #Q4
+planets = table: planet :: String, distance :: Number
+  row: "Mercury", 0.39
+  row: "Venus", 0.72
+  row: "Earth", 1
+  row: "Mars", 1.52
+  row: "Jupiter", 5.2
+  row: "Saturn", 9.54
+  row: "Uranus", 19.2
+  row: "Neptune", 30.06
+end
 
-
-
+mars = planets.row-n(3)
+mars["distance"]
+  
 
 #Q5
 #year :: Number
 #day :: Number
 
 #order-by(dataset, "feature, true table)
+include csv
