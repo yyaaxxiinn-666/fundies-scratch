@@ -68,3 +68,16 @@ place-image(
   )
 
 "Finally all practice Qs done!"
+num-to-string(1) + " blue"
+
+
+overlay-align("center", "center",
+  above(circle(12, "solid", "red"),
+    above(circle(12, "solid", "yellow"),
+      circle(12, "solid", "green"))),
+  rectangle(40, 100, "solid", "black"))
+overlay-align("center", "center",
+  above(circle(12, "outline", "red"),
+    above(circle(12, "outline", "yellow"),
+      circle(12, "outline", "green"))),
+  rectangle(50, 100, "solid", "black"))

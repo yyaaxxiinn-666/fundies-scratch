@@ -100,3 +100,14 @@ fun fahrenheit-to-celsius(fahrenheit :: Number) -> Number:
 
   ((fahrenheit - 32) * 5) / 9
 end
+check:
+  fahrenheit-to-celsius(30) is%(within(0.01)) -1.11
+end
+
+
+fun areaa(width1, height1):
+  width1 * height1
+end
+check:
+  areaa(4,20) is 80
+end

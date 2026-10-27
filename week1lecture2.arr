@@ -1,5 +1,6 @@
 use context starter2024
 #Include image
+2 + 3
 a = 'Hello World'
 
 b = a + ' '
@@ -59,5 +60,3 @@ below(circle(30, "solid", "blue"), rectangle(80, 60, "solid", "yellow"))
 #beside((first image), (second image))
 "beside:"
 beside(circle(30, "solid", "blue"), rectangle(80, 60, "solid", "yellow"))
-
-
