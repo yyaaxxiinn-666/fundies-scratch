@@ -18,7 +18,7 @@ where:
 end
 
 
-#Q2Problem 2 Consider that we can use a number to represent seconds in a minute: any whole number from 0 to 59 (inclusive) is valid, but numbers above or below (or fractions or decimals) are not valid. Design a function tick, that takes a number of seconds and returns the next second, as if a clock were ticking. Be sure that it does the right thing if given 59 seconds is input! Be sure to include a doc string and test cases in a where block.
+#Q2
 fun tick(seconds :: Number) -> Number:
   doc: "returns the next second of a given second"
   if seconds < 59:
@@ -32,21 +32,27 @@ where:
   tick(12) is 13
 end
 
-  
-    
 
-  
 #Q3
-  #  ask
-  #Case1
-  #Case2
-  #Case3
-#otherwise: "invalid"
-  #end
-  
- 
+fun rock-paper-scissors(player1 :: String, player2 :: String) -> String:
+  doc: "rock, paper, scissors game who's win"
+  ask:
+    | (player1 == player2) then: "tie"
+    | (player1 == "rock") and (player2 == "paper") then: "player2"
+    | (player1 == "rock") and (player2 == "scissors") then: "player1"
+    | (player1 == "paper") and (player2 == "rock") then: "player1"  
+    | (player1 == "paper") and (player2 == "scissors") then: "player2"  
+    | (player1 == "scissors") and (player2 == "paper") then: "player1"  
+    | (player1 == "scissors") and (player2 == "rock") then: "player2"  
+    | otherwise: "invalid choice"
+  end
+where:
+  rock-paper-scissors("rock", "rock") is "tie"
+  rock-paper-scissors("paper", "scissors") is "player2"
+  rock-paper-scissors("scissors", "rock") is "player2"
+  rock-paper-scissors("rrr", "rock") is "invalid choice"
 
-
+end
 
 
 #Q4
