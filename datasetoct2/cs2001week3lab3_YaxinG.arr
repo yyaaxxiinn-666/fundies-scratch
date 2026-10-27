@@ -74,11 +74,6 @@ mars["distance"]
   
 
 #Q5
-#year :: Number
-#day :: Number
-
-#order-by(dataset, "feature, true table)
-
 something = load-table:
   year :: Number,
   day :: Number,
