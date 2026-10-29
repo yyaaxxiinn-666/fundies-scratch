@@ -111,17 +111,25 @@ end
 
 
 #Q3
-clean-dep-delay = 
-  transform-column(
-    flights,
-    "dep_delay",
-    lam(delay):
-      if delay < 0:
+
+fun clamp-negative(t :: Table, colname :: String) -> Table:
+  doc:"returns the table with any negative value in the named column replaced by 0"
+  transform-column(t, colname, lam(v :: Number) -> Number:
+      if v < 0:
         0
       else:
-        delay
+        v
       end
-    end
-)
-        
+    end)
+where:
+  clamp-negative(
+    table: x :: Number
+      row: -5
+      row: 0
+      row: 7
+    end, "x").get-column("x") is [list: 0, 0, 7]
+end
+
+cleaned = clamp-negative(clamp-negative(flights, "dep_delay"), "arr_delay")
+
         
