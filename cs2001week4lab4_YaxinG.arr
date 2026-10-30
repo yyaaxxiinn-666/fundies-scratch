@@ -133,3 +133,5 @@ end
 cleaned = clamp-negative(clamp-negative(flights, "dep_delay"), "arr_delay")
 
         
+string-length("Hi my")
+2 / 3
